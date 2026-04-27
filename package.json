@@ -1,0 +1,12 @@
+{
+  "name": "saada-peer-server-virtual",
+  "version": "1.0.0",
+  "description": "SA'ADA Virtual Therapy - Peer Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "peer": "^0.9.1"
+  }
+}
