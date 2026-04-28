@@ -2,9 +2,14 @@ const { PeerServer } = require('peer');
 
 const peerServer = PeerServer({
   port: process.env.PORT || 9000,
-  path: '/peerjs', // تغيير المسار لمنع التعارض
+  path: '/peerjs', 
   allow_discovery: true,
-  proxied: true // هذا السطر حاسم لعمل السيرفر على Render
+  proxied: true 
+});
+
+// التعديل: الـ 3 سطور دول هيردوا على موقع الـ cron-job عشان ما يديش 404
+peerServer.get('/', (req, res) => {
+  res.status(200).send("SA'ADA Peer Server is Awake!");
 });
 
 console.log("SA'ADA Peer Server is running...");
